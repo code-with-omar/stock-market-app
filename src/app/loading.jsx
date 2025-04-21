@@ -1,9 +1,7 @@
-import React from "react";
-
-export default function loading() {
+export default function Loading() {
   return (
-    <div>
-      <h2>Loading...</h2>
+    <div className="p-6 max-w-4xl mx-auto animate-pulse text-blue-600 font-semibold">
+      Loading page...
     </div>
   );
 }

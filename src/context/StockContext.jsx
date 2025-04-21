@@ -8,10 +8,19 @@ export const StockProvider = ({ children }) => {
   const [symbol, setSymbol] = useState("");
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
-
+  const [loading, setLoading] = useState(false);
   return (
     <StockContext.Provider
-      value={{ symbol, setSymbol, data, setData, error, setError }}
+      value={{
+        symbol,
+        setSymbol,
+        data,
+        setData,
+        error,
+        setError,
+        setLoading,
+        loading,
+      }}
     >
       {children}
     </StockContext.Provider>
