@@ -1,16 +1,11 @@
 "use client";
 
 import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
+  LineChart,Line,XAxis,YAxis,Tooltip,ResponsiveContainer,
 } from "recharts";
 import { useStockContext } from "@/context/StockContext";
 
-export default function StockChart() {
+export default function Chart() {
   const { data } = useStockContext();
 
   if (!data?.chart) return null;

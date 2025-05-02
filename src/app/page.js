@@ -1,7 +1,7 @@
 "use client";
-import StockInfo from "@/components/StockInfo";
-import StockChart from "@/components/StockChart";
-import DividendTable from "@/components/DividendTable";
+import Price from "@/components/Price";
+import Chart from "@/components/Chart";
+import Dividends from "@/components/Dividends";
 import { useStockContext } from "@/context/StockContext";
 import SearchBar from "@/components/InputForm";
 
@@ -41,9 +41,9 @@ export default function Home() {
       ) : (
         data && (
           <>
-            <StockInfo />
-            <StockChart />
-            <DividendTable />
+            <Price />
+            <Chart />
+            <Dividends />
           </>
         )
       )}

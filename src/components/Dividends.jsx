@@ -5,7 +5,7 @@ import { useStockContext } from "@/context/StockContext";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
-export default function DividendTable() {
+export default function Dividends() {
   const { data } = useStockContext();
   const tableRef = useRef(null);
   const [isMounted, setIsMounted] = useState(false);

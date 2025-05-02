@@ -1,6 +1,6 @@
 "use client";
 import { useStockContext } from "@/context/StockContext";
-export default function StockInfo() {
+export default function Price() {
   const { data } = useStockContext();
   if (!data?.info) return null;
   const { symbol, name, cusip, price } = data.info;
