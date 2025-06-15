@@ -9,11 +9,14 @@ export const StockProvider = ({ children }) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [cusipRecords, setCusipRecords] = useState("");
   return (
     <StockContext.Provider
       value={{
         symbol,
         setSymbol,
+        cusipRecords,
+        setCusipRecords,
         data,
         setData,
         error,

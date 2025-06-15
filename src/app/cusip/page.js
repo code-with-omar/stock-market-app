@@ -1,26 +1,15 @@
 "use client";
-import Price from "@/components/Price";
-import Chart from "@/components/Chart";
-import Dividends from "@/components/Dividends";
+import CusipData from "@/components/CusipData";
+import SearchBarForCusip from "@/components/cusipInputFrom";
 import { useStockContext } from "@/context/StockContext";
-import SearchBar from "@/components/InputForm";
-import Link from "next/link";
+import React from "react";
 
-export default function Home() {
-  const { data, error, loading } = useStockContext();
-
+export default function HomePage() {
+  const { cusipRecords, error, loading } = useStockContext();
   return (
     <div className="p-6 max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Stock Info Site</h1>
-      <div>
-        <SearchBar />
-        <Link
-          href="/cusip"
-          className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-        >
-          CUSIP
-        </Link>
-      </div>
+      <h1 className="text-2xl font-bold mb-4">CUSIP Info</h1>
+      <SearchBarForCusip />
 
       {error && <p className="text-red-600">{error}</p>}
 
@@ -49,11 +38,9 @@ export default function Home() {
           <span className="ml-2 text-blue-600">Loading stock data...</span>
         </div>
       ) : (
-        data && (
+        cusipRecords && (
           <>
-            <Price />
-            <Chart />
-            <Dividends />
+            <CusipData></CusipData>
           </>
         )
       )}
